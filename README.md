@@ -1,4 +1,4 @@
-# 📦 Sistema de Estoque SE - Beta
+# 📦 Inventix - Beta
 
 Sistema de gerenciamento de estoque desenvolvido em **Python** utilizando **CustomTkinter**.
 
