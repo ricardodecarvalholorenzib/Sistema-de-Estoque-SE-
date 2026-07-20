@@ -1,4 +1,4 @@
-# 📦 Inventix - Beta
+# 📦 StockFlow- Beta
 
 Sistema de gerenciamento de estoque desenvolvido em **Python** utilizando **CustomTkinter**.
 
