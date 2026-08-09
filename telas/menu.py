@@ -6,7 +6,7 @@ import os
 from util.cmds import carregar_imagem
 
 def abrir_menu(janela):
-    janela.title("Menu Principal | Sistema de Estoque")
+    janela.title("Menu Principal | StockFlow")
     ctk.set_appearance_mode("light")
     janela.geometry("500x350")
 
@@ -14,8 +14,10 @@ def abrir_menu(janela):
         janela,
         width=450,
         height=280,
-        corner_radius=10
+        corner_radius=10,
+        fg_color="transparent"
     )
+    frame._scrollbar.grid_remove()
 
     caixa_image = carregar_imagem("caixa.png", (50, 50))
     
