@@ -7,11 +7,12 @@ import os
 
 produtos = []
 
+# ==========================================
+# IMPORT JANELA
+# ==========================================
+
 from util.cmds import botao_voltar_menu
 from telas.menu import abrir_menu
-
-print(os.getcwd())
-print(os.path.exists("imagens/caixa.png"))
 
 def abrir_produto(janela):
     janela.title("Cadastro de Produtos")
@@ -19,8 +20,11 @@ def abrir_produto(janela):
     frame = ctk.CTkScrollableFrame(
     janela,
     width=450,
-    height=500
+    height=500,
+    fg_color="transparent",
     )
+
+    frame._scrollbar.grid_remove()
 
     traço = ctk.CTkLabel(
         frame,
@@ -68,6 +72,8 @@ def abrir_produto(janela):
         text_color="black"
     )    
 
+    from util.prod_save import criar_produto
+
     def cadastro_produto_nome():
         from telas.menu import abrir_menu
 
@@ -81,17 +87,16 @@ def abrir_produto(janela):
         produto_id = random.randint(1, 1000)
         
         try:
-            preço = float(preço_produto.get().replace(".", ","))
+            preço = float(preço_produto.get().replace(",", "."))
             quantidade = int(quantidade_produto.get())
         except ValueError:
             erro_digito_numero.configure(text="Você não pode digitar letras ou caracteres especiais\nnas caixas de números!")
             return
 
-        produtos.append({
-            "nome": nome,
-            "preço": preço,
-            "quantidade": quantidade,
-            "id": produto_id})
+        sucesso = criar_produto(nome, preço, quantidade)
+        if not sucesso:
+            erro_digito_numero.configure(text="Produto já cadastrado!")
+            return
 
         nome_produto.delete(0, "end")
         preço_produto.delete(0, "end")
