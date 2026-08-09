@@ -212,6 +212,9 @@ tempCodeRunnerFile.py
 # Marimo
 marimo/_static/
 marimo/_lsp/
+
+# Pasta de dados locais do aplicativo (arquivos JSON do usuário)
+dados/
 __marimo__/
 
 # Streamlit
