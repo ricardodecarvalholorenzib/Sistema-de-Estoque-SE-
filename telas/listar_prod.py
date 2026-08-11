@@ -2,7 +2,7 @@
 
 import customtkinter as ctk
 from PIL import Image
-from util.prod_save import carregar_produtos
+from util.prod_save import carregar_meus_produtos, salvar_produtos
 from util.cmds import botao_voltar_menu
 from telas.menu import abrir_menu
 import os
@@ -34,20 +34,60 @@ def abrir_listar(janela):
         text_color="red"
     )
 
-    produtos = carregar_produtos()
+    produtos = carregar_meus_produtos()
 
     if produtos:
         for produto in produtos:
             caixa_image = carregar_imagem("caixa.png", (50, 50))
+
+            def editar_produto(p, j):
+                from util.cmds import trocar_tela
+                from telas.editar import abrir_editar_produto
+
+                trocar_tela(j, lambda j: abrir_editar_produto(j, p))
+            
+            excluir_produto = lambda p, f, j: (
+                produtos.remove(p),
+                salvar_produtos(produtos),
+                f.destroy(),
+                abrir_listar(j)
+            )
 
             card = ctk.CTkFrame(
                 frame,
                 corner_radius=10
             )
 
-            titulo = ctk.CTkLabel(
+            editar_produto_button = ctk.CTkButton(
+                frame,
+                text="Editar",
+                command=lambda p=produto: editar_produto(p, janela),
+                compound="right",
+                fg_color="blue",
+                hover_color="blue"
+            )
+            editar_produto_button.place(x=270, y=102)
+
+            excluir_button = ctk.CTkButton(
+                card,
+                text="Excluir",
+                command=lambda p=produto: excluir_produto(p, frame, janela),
+                fg_color="red",
+                hover_color="#ff4d4d"
+            )
+            excluir_button.place(x=260, y=78)
+
+            caixa = ctk.CTkLabel(
                 card,
                 image=caixa_image,
+                text="",
+                width=50,
+                height=50
+            )
+            caixa.pack(side="left", padx=10, pady=10)
+
+            titulo = ctk.CTkLabel(
+                card,
                 compound="left",
                 text=f"{produto['nome_produto']}",
                 font=("Segoe UI", 18, "bold")

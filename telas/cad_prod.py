@@ -75,6 +75,7 @@ def abrir_produto(janela):
     from util.prod_save import criar_produto
 
     def cadastro_produto_nome():
+
         from telas.menu import abrir_menu
 
         from util.cmds import trocar_tela
@@ -83,8 +84,6 @@ def abrir_produto(janela):
         if not nome.strip():
             erro_digito_numero.configure(text="Digite o nome do produto.")
             return
-
-        produto_id = random.randint(1, 1000)
         
         try:
             preço = float(preço_produto.get().replace(",", "."))
