@@ -69,7 +69,7 @@ python main.py
 ```text
 StockFlow/
 ├── dados/          # Dados locais da aplicação (não versionados)
-├── imagens/        # Imagens utilizadas pela interface
+├── images/         # Imagens utilizadas pela interface
 ├── telas/          # Telas da aplicação
 ├── util/           # Funções auxiliares e persistência
 ├── main.py         # Ponto de entrada
