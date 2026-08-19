@@ -1,89 +1,55 @@
-# 📦 StockFlow — Beta
+# 📦 StockFlow
 
 Sistema de gerenciamento de estoque desenvolvido em **Python** com **CustomTkinter**.
 
-> ⚠️ Projeto em desenvolvimento — versão **Beta**.
+> ⚠️ **Status:** projeto em desenvolvimento.
 
-## ✨ Funcionalidades
+## Sobre
 
-- 🔐 Sistema de login e criação de contas
-- 🔒 Senhas armazenadas utilizando hash
-- 👤 Produtos separados por usuário autenticado
-- 📦 Cadastro de produtos
-- 📋 Listagem de produtos cadastrados
-- ✏️ Edição de produtos
-- 🗑️ Exclusão de produtos
-- 💰 Cadastro e edição de preço e quantidade
-- 💾 Persistência dos dados em arquivos **JSON**
-- 🖼️ Interface gráfica com CustomTkinter
-- 👁️ Opção para mostrar/ocultar senha
-- 🔄 Navegação entre telas
-- 🛡️ Tratamento básico para arquivos JSON inexistentes ou inválidos
+O StockFlow foi criado como projeto de estudo para praticar desenvolvimento de aplicações em Python, interfaces gráficas, autenticação e persistência de dados.
 
-## 💾 Persistência de dados
+A ideia do sistema é permitir o gerenciamento de produtos por meio de uma interface gráfica.
 
-Os dados locais da aplicação são armazenados na pasta `dados/`.
-
-Os arquivos de dados são mantidos fora do controle de versão através do `.gitignore`, evitando que informações locais sejam publicadas no GitHub.
-
-Cada produto é associado ao usuário que o cadastrou, permitindo que diferentes contas mantenham estoques separados.
-
-> Atualmente o projeto utiliza **JSON** como armazenamento. Uma futura evolução prevista é a migração para **SQLite**.
-
-## 🚧 Em desenvolvimento
-
-- 🔐 Login automático / persistência da sessão entre execuções
-- 🔎 Pesquisa e filtros de produtos
-- ✅ Validações mais completas dos formulários
-- 🛡️ Confirmação antes de excluir produtos
-- ✨ Melhorias de interface e consistência visual
-- 🧪 Testes automatizados
-- 🛒 Sistema de vendas
-- 📊 Relatórios
-- 🗄️ Migração para SQLite
-- 📦 Geração de executável (`.exe`)
-
-## 🛠️ Tecnologias
+## 🛠️ Tecnologias planejadas
 
 - Python 3
 - CustomTkinter
 - Pillow (PIL)
 - JSON
 
-## ▶️ Como executar
+## 📌 Estado atual do repositório
 
-Instale as dependências:
+O repositório ainda não contém uma versão completa e executável do projeto. A estrutura publicada atualmente possui o `README.md`, `.gitignore` e diretórios reservados para partes da aplicação.
 
-```bash
-pip install customtkinter pillow
-```
+Por isso, **não há um comando de execução confiável para fornecer neste momento**.
 
-Depois execute:
+> Esta seção é intencionalmente simples para não documentar arquivos ou comandos que ainda não estão publicados no repositório.
 
-```bash
-python main.py
-```
+## 🚧 Próximos passos
 
-## 📁 Estrutura do projeto
+- [ ] Publicar o ponto de entrada da aplicação
+- [ ] Publicar as telas do sistema
+- [ ] Publicar os módulos auxiliares
+- [ ] Adicionar um `requirements.txt`
+- [ ] Documentar a instalação quando o projeto estiver executável
+- [ ] Migrar o armazenamento de JSON para SQLite
+- [ ] Adicionar testes
+- [ ] Gerar uma versão `.exe`
+
+## 📁 Estrutura publicada atualmente
 
 ```text
 StockFlow/
-├── dados/          # Dados locais da aplicação (não versionados)
-├── images/         # Imagens utilizadas pela interface
-├── telas/          # Telas da aplicação
-├── util/           # Funções auxiliares e persistência
-├── main.py         # Ponto de entrada
+├── imagens/
+├── telas/
+├── util/
 ├── .gitignore
 └── README.md
 ```
 
-## 📌 Status
+## 🎯 Objetivo
 
-**Versão: v0.3.0-beta**
-
-O StockFlow está sendo desenvolvido como projeto de estudo e prática de programação em Python, organização de código, interfaces gráficas, autenticação e persistência de dados.
-
-O projeto ainda está em evolução e novas funcionalidades estão sendo planejadas através das **GitHub Issues**.
+Este projeto faz parte do meu aprendizado em Python e representa uma tentativa de construir uma aplicação de estoque mais completa, passando de scripts simples para um projeto com organização de arquivos e interface gráfica.
 
 ---
 
